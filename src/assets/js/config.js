@@ -4,7 +4,7 @@ const config = {
   autoMuteCount: 10,
   autoload: false,
   meethrix:false,
-  enableHacks: false,
+  enableHacks: true,
   mesh: false,
   iceServers:{
     

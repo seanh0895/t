@@ -89,7 +89,7 @@ function Mediator() {
       ? this.h.getQString(location.href, "room") :
         (sessionStorage && sessionStorage.getItem("roomname"))
         ? sessionStorage.getItem("roomname") :
-        "";
+        "demo";
     if(document.querySelector('#roomname')){document.querySelector('#roomname').setAttribute("value", this.room);}
     this.username = sessionStorage && sessionStorage.getItem("username") ? sessionStorage.getItem("username") : "";
     if(document.querySelector('#username')){document.querySelector('#username').setAttribute("value", this.username);}

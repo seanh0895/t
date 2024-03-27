@@ -27,21 +27,27 @@ export default class Room extends EventEmitter {
             if (retry) {
                 throw ("Retry");
             }
-            var SFU_URL = "wss://" + window.location.hostname + ":2345";
+            //var SFU_URL = "wss://janus.conf.meetecho.com/ws";
+            //
+            var SFU_URL = "wss://v3demo.mediasoup.org:4443";
             if(window.location.hostname.indexOf("meething.space") > 0) {
                 SFU_URL = `${config.wssFailover}`
             }
             console.log("Joining Local SFU", SFU_URL);
+            
             const wsTransport = new WebSocket(`${SFU_URL}/?roomId=${roomId}&peerId=${peerId}`, "protoo");
+            
             if (wsTransport.readyState == 2 || wsTransport.readyState == 3) { console.error('something not right with webSocket'); throw 'webSocket Local Error'; }
             peer = new Peer(wsTransport);
-            console.log('peer', peer._transport._connected, wsTransport.readyState);
+
+            console.log('peer._transport is undefined?', peer._transport);
+            console.log('peer', peer._connected, wsTransport.readyState);
             this.checkTimeOut(peer);
 
         } catch (e) {
             console.log('SFU Failover! Use Remote default');
             var SFU_URL = `${config.wssFailover}`
-            const wsTransport = new WebSocket(`${SFU_URL}/?roomId=${roomId}&peerId=${peerId}`, "protoo");
+            const wsTransport = new WebSocket(`${SFU_URL}`, "protoo");
             peer = new Peer(wsTransport);
         }
 

@@ -287,7 +287,14 @@ export default class UEX {
     document.querySelector('#options-button').addEventListener('click', function(ev) {
       var opt = document.querySelector('#options');
       opt.classList.toggle('out')
+      //opt.toggleAttribute("hidden");
     });
+ document.querySelector('#wallet-button').addEventListener('click', function(ev) {
+      var wallet = document.querySelector('#wallet');
+      wallet.classList.toggle('out')
+      //wallet.toggleAttribute("hidden");
+    });
+
 
 
     // options: go button pushed
@@ -318,6 +325,8 @@ export default class UEX {
       if(document.querySelector('#title')){document.querySelector('#title').setAttribute("hidden","");}
       if(document.querySelector('#selfview')){document.querySelector('#selfview').setAttribute("hidden","");}
       if(document.querySelector('#options')){document.querySelector('#options').setAttribute("hidden","");}
+      if(document.querySelector('#wallet')){document.querySelector('#wallet').setAttribute("hidden","");}
+      
       if(document.querySelector('#options')){document.querySelector('#options').setAttribute("class","floating-1 out");}
       if(!med.myStream){
         await self.resetDevices();

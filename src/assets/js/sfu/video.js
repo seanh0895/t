@@ -33,13 +33,14 @@ export default class Video {
       // the id/element dom element that will hold remote videos
       remoteVideosEl: "",
       autoRequestMedia: true,
-      debug: false,
+      debug: true,
       detectSpeakingEvents: true,
       autoAdjustMic: false
     });
 
     // Set the publicly available room URL.
     // startButton.onclick = function () {
+    console.log('med.room', med.room);
     webrtc.joinRoom(med.room, med.socketId);
     this.disabled = true;
     // }

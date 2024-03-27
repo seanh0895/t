@@ -607,6 +607,12 @@ justify-items: center;
   margin: 10px;
 }
 
+#wallet-button {
+  position: absolute;
+  left: -54px;
+  bottom: 0px;
+  box-shadow: -7px 7px 20px black;
+}
 /* button for options to slide out */
 
 #options-button {
@@ -703,10 +709,28 @@ input:checked + .slider:before {
   top: -250px;
   transition: top 1.5s;
 }
+.floating-1w {
+  position: relative;
+  margin: auto;
+  margin-top: 15px;
+  padding: 5px;
+  align-content: left;
+  text-align: left;
+  z-index: 2;
+  border-radius: 6px;
+  box-shadow: 3px 3px 20px black;
+  background-color: rgba(52, 40, 53, 1);
+  top: -500px;
+  transition: top 1.5s;
+}
 
 .floating-1.out {
   top:0px;
 }
+.floating-1w.out {
+  top:-190px;
+}
+
 
 .floating-2 {
   position: relative;

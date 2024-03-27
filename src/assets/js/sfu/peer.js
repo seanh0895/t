@@ -3,6 +3,7 @@ import EventEmitter from "../ee.js";
 var self = null;
 
 export class Peer extends EventEmitter {
+
     constructor(transport) {
         super();
         console.log('constructor()');
@@ -18,7 +19,7 @@ export class Peer extends EventEmitter {
         // Connected flag.
         // @type {Boolean}
         this._connected = false;
-
+        
         // Custom data object.
         // @type {Object}
         this._data = {};
@@ -34,6 +35,7 @@ export class Peer extends EventEmitter {
     }
 
     _handleTransport() {
+        
         if (this._transport.closed) {
             this._closed = true;
 
